@@ -1,12 +1,13 @@
 version: '3'
-services:
-	local.functions:
-		container_name: AzureFunctions
-		build:
-			context: .
-			dockerfile: Dockerfile
-		ports:
-			- 8080:80
-		environment:
-			# copy .env variables through to container_name
-			- RabbitMQ
+services:   
+
+    local.azurefunctions:
+        container_name: local.azurefunctions
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 8080:80
+        environment:
+            # Copy .env variables through to container
+            - RabbitMQ
