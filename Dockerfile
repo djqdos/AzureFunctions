@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS installer-env
 
+ENV RabbitMQ=$RabbitMQ
+
 # Build requires 3.1 SDK
 COPY --from=mcr.microsoft.com/dotnet/core/sdk:3.1 /usr/share/dotnet /usr/share/dotnet
 
@@ -11,8 +13,7 @@ RUN cd /src/dotnet-function-app && \
 # To enable ssh & remote debugging on app service change the base image to the one below
 # FROM mcr.microsoft.com/azure-functions/dotnet-isolated:3.0-dotnet-isolated5.0-appservice
 FROM mcr.microsoft.com/azure-functions/dotnet-isolated:3.0-dotnet-isolated5.0
-ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-	RabbitMQ="amqp://guest:guest@192.168.1.250:5672/"
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot
+ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 
 COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
