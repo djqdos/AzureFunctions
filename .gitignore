@@ -3,3 +3,6 @@
 ################################################################################
 
 /AzureDownloaders.Models/bin/Debug/net5.0
+/AzureDownloaders.Models/obj
+/AzureDownloaders.Services/bin/Debug/net5.0
+/AzureDownloaders.Services/obj
