@@ -13,5 +13,6 @@ RUN cd /src/dotnet-function-app && \
 FROM mcr.microsoft.com/azure-functions/dotnet-isolated:3.0-dotnet-isolated5.0
 ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
     AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+	RabbitMQ="amqp://guest:guest@192.168.1.250:5672/"
 
 COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
