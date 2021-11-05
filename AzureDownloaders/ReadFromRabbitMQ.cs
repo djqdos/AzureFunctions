@@ -9,12 +9,12 @@ namespace AzureDownloaders
 {
     public class ReadFromRabbitMQ
     {
-        private readonly IDownloadService _service;
+        //private readonly IDownloadService _service;
 
-        public ReadFromRabbitMQ(IDownloadService service)
-        {
-            _service = service;
-        }
+        //public ReadFromRabbitMQ(IDownloadService service)
+        //{
+        //    _service = service;
+        //}
 
         [Function("ReadFromRabbitMQ")]
         public async Task Run([RabbitMQTrigger("downloads", ConnectionStringSetting = "RabbitMQ")] RabbitMQMessage rabbitMessage, FunctionContext context)
