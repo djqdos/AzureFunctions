@@ -14,10 +14,10 @@ namespace AzureDownloaders
         {
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
-                .ConfigureServices(s =>
-                {
-                    s.AddTransient<IDownloadService, DownloadService>();
-                })
+                //.ConfigureServices(s =>
+                //{
+                //    s.AddTransient<IDownloadService, DownloadService>();
+                //})
                 .Build();
 
             host.Run();
