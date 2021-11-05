@@ -13,7 +13,7 @@ namespace AzureDownloaders.Services
 {
     public class DownloadService : IDownloadService
     {        
-        private string filePath = Path.Combine("\\\\192.168.1.102\\Adult\\temp");
+        private string filePath = Path.Combine("/downloadoutput");
 
 
         private string SetDirectories(RabbitMQMessage message)
