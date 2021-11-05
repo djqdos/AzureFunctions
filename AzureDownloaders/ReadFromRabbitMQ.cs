@@ -22,7 +22,7 @@ namespace AzureDownloaders
             var logger = context.GetLogger("ReadFromRabbitMQ");
             logger.LogInformation($"C# Queue trigger function processed: {rabbitMessage}");
 
-            _service.DownloadImages(rabbitMessage);
+            //_service.DownloadImages(rabbitMessage);
         }
     }
 }
