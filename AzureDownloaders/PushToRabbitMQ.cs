@@ -15,12 +15,12 @@ namespace AzureDownloaders
 {    
     public class PushToRabbitMQ
     {
-        private readonly IDownloadService _service;
+        //private readonly IDownloadService _service;
 
-        public PushToRabbitMQ(IDownloadService service)
-        {
-            _service = service;
-        }
+        //public PushToRabbitMQ(IDownloadService service)
+        //{
+        //    _service = service;
+        //}
 
 
         [Function("PushToRabbitMQ")]
