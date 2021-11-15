@@ -13,7 +13,8 @@ namespace AzureDownloaders.Services
 {
     public class DownloadService : IDownloadService
     {        
-        private string filePath = Path.Combine("/downloadoutput");
+        //private string filePath = Path.Combine("/downloadoutput");
+        private string filePath = Path.Combine("e:\\");
 
 
         private string SetDirectories(RabbitMQMessage message)
@@ -43,7 +44,7 @@ namespace AzureDownloaders.Services
             return returnDir;
         }
 
-        public void DownloadImages(RabbitMQMessage message)
+        public async Task DownloadImages(RabbitMQMessage message)
         {
             string path = SetDirectories(message);
             int counter = 1;
@@ -51,10 +52,30 @@ namespace AzureDownloaders.Services
             {                
                 using(WebClient client = new WebClient())
                 {                                      
-                    client.DownloadFile(new Uri(imageUrl), Path.Combine(path, $"{counter}.jpg"));                    
+                    //client.DownloadFile(new Uri(imageUrl), Path.Combine(path, $"{counter}.jpg"));
+                    var data = await client.DownloadDataTaskAsync(new Uri(imageUrl));
+                    var contentType = client.ResponseHeaders["Content-Type"];
+                    await File.WriteAllBytesAsync(Path.Combine(path, $"{counter}.{GetFileExt(contentType)}"), data);
                 }
                 counter++;
             }
         }
+
+        private string GetFileExt(string mimeType)
+        {
+            string ext = string.Empty;
+
+            switch (mimeType)
+            {
+                case "image/jpeg": ext = "jpg";
+                    break;
+
+                case "video/mp4": ext = "mp4";
+                    break;
+            }
+
+            return ext;
+        }
+
     }
 }

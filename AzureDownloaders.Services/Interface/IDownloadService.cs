@@ -9,6 +9,6 @@ namespace AzureDownloaders.Services.Interface
 {
     public interface IDownloadService
     {
-        void DownloadImages(RabbitMQMessage message);
+        Task DownloadImages(RabbitMQMessage message);
     }
 }

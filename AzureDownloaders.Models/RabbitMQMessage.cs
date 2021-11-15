@@ -19,5 +19,6 @@ namespace AzureDownloaders.Models
         public List<string> ImageList { get; set; }
 
         public DateTime PublishDate { get; set; }
+        public string Type { get; set; }
     }
 }
