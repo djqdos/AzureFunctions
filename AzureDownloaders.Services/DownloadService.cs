@@ -14,8 +14,8 @@ namespace AzureDownloaders.Services
 {
     public class DownloadService : IDownloadService
     {        
-        //private string filePath = Path.Combine("/downloadoutput");
-        private string filePath = Path.Combine(@"e:\imgtest2");
+        private string filePath = Path.Combine("/downloadoutput");
+        //private string filePath = Path.Combine(@"e:\imgtest2");
 
 
         private string SetDirectories(DownloadMessage message)
