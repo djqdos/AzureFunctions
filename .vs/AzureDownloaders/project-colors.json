@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5d69d404-8f38-42fc-9bac-de8def6a7b05": {
+      "ProjectGuid": "5d69d404-8f38-42fc-9bac-de8def6a7b05",
+      "DisplayName": "AzureDownloaders",
+      "ColorIndex": 0
+    },
+    "c9dbe47f-df23-42a0-843b-452c9b6f0d69": {
+      "ProjectGuid": "c9dbe47f-df23-42a0-843b-452c9b6f0d69",
+      "DisplayName": "AzureDownloaders.Services",
+      "ColorIndex": 1
+    },
+    "6daed7b4-04e5-4fe6-9af8-6de826b6dd50": {
+      "ProjectGuid": "6daed7b4-04e5-4fe6-9af8-6de826b6dd50",
+      "DisplayName": "AzureDownloaders.Models",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

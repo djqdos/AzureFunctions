@@ -16,9 +16,16 @@ namespace AzureDownloaders.Models
 
         public string? Title { get; set; }
 
-        public List<string> ImageList { get; set; }
+        public List<MediaItem> ImageList { get; set; }
 
         public DateTime PublishDate { get; set; }
         public string Type { get; set; }
+    }
+
+    public class MediaItem
+    {
+        public string Type { get; set; }
+
+        public string Url { get; set; }
     }
 }

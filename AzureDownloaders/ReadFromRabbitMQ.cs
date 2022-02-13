@@ -17,12 +17,12 @@ namespace AzureDownloaders
         }
 
         [Function("ReadFromRabbitMQ")]
-        public async Task Run([RabbitMQTrigger("downloads", ConnectionStringSetting = "RabbitMQ")] RabbitMQMessage rabbitMessage, FunctionContext context)
+        public async Task Run([RabbitMQTrigger("downloads", ConnectionStringSetting = "RabbitMQ")] DownloadMessage rabbitMessage, FunctionContext context)
         {
             var logger = context.GetLogger("ReadFromRabbitMQ");
             logger.LogInformation($"C# Queue trigger function processed: {rabbitMessage}");
 
-            _service.DownloadImages(rabbitMessage);
+            await _service.DownloadImages(rabbitMessage);
         }
     }
 }
