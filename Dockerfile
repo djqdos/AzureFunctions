@@ -12,10 +12,10 @@ COPY --from=runtime3_1 /usr/share/dotnet/shared /usr/share/dotnet/shared
 WORKDIR /src
 COPY . "AzureDownloaders"
 
-RUN dotnet restore "AzureDownloaders/AzureDownloaders.csproj"
+RUN dotnet restore AzureDownloaders/AzureDownloaders/AzureDownloaders.csproj
 COPY . .
 WORKDIR "/src/AzureDownloaders"
-RUN dotnet build "AzureDownloaders.csproj" -c Release -o /app/build
+RUN dotnet build "AzureDownloaders/AzureDownloaders.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "AzureDownloaders.csproj" -c Release -o /app/publish
